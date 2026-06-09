@@ -1,6 +1,6 @@
 import type { Expense } from '../types'
 import ExpenseItem from './ExpenseItem'
-import EmptyState from './EmptyState'
+
 import type { FilterState } from './FilterPopup'
 
 interface ExpenseListProps {
@@ -15,12 +15,17 @@ interface ExpenseListProps {
 export default function ExpenseList({ expenses, totalCount, filters, onEdit, onDelete, onOpenFilter }: ExpenseListProps) {
   if (totalCount === 0) {
     return (
-      <section className="px-4">
-        <EmptyState
-          icon="📋"
-          title="No expenses yet"
-          description="Add your first expense and begin tracking where your money goes."
-        />
+      <section className="px-4 mb-6">
+        <h2 className="text-xl font-semibold text-gray-500 mb-2 px-1">
+          Recent Expenses
+        </h2>
+        <div className="bg-card rounded-2xl p-5 shadow-sm border border-gray-100">
+          <div className="flex flex-col items-center justify-center py-6 text-center">
+            <span className="text-4xl mb-4">📋</span>
+            <h2 className="text-lg font-semibold text-gray-800">No expenses yet</h2>
+            <p className="text-sm text-gray-500 mt-1 max-w-xs">Tap the + button to add your first expense and start tracking where your money goes.</p>
+          </div>
+        </div>
       </section>
     )
   }
@@ -29,7 +34,7 @@ export default function ExpenseList({ expenses, totalCount, filters, onEdit, onD
     return (
       <section className="px-4 mb-4">
         <div className="flex items-center justify-between mb-2 px-1">
-          <h2 className="text-sm font-bold text-gray-500">
+          <h2 className="text-xl font-semibold text-gray-500">
             Recent Expenses
           </h2>
           <button
@@ -43,11 +48,13 @@ export default function ExpenseList({ expenses, totalCount, filters, onEdit, onD
             </svg>
           </button>
         </div>
-        <EmptyState
-          icon="🔍"
-          title="No matching expenses"
-          description="Try adjusting your filters to see more results."
-        />
+        <div className="bg-card rounded-2xl p-5 shadow-sm border border-gray-100">
+          <div className="flex flex-col items-center justify-center py-6 text-center">
+            <span className="text-4xl mb-4">🔍</span>
+            <h2 className="text-lg font-semibold text-gray-800">No matching expenses</h2>
+            <p className="text-sm text-gray-500 mt-1 max-w-xs">Try adjusting your filters to see more results.</p>
+          </div>
+        </div>
       </section>
     )
   }
@@ -57,7 +64,7 @@ export default function ExpenseList({ expenses, totalCount, filters, onEdit, onD
   return (
     <section className="px-4 mb-4">
       <div className="flex items-center justify-between mb-2 px-1">
-        <h2 className="text-sm font-bold text-gray-500">
+        <h2 className="text-xl font-semibold text-gray-500">
           Recent Expenses
         </h2>
         <button
