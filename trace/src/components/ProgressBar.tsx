@@ -6,7 +6,7 @@ interface ProgressBarProps {
 
 const COLOR_CLASSES: Record<string, { track: string; fill: string; badge: string }> = {
   primary: { track: 'bg-primary/15', fill: 'bg-primary', badge: 'bg-primary text-white' },
-  warning: { track: 'bg-[#C47302]/15', fill: 'bg-[#C47302]', badge: 'bg-[#C47302] text-white' },
+  warning: { track: 'bg-[#F9930E]/15', fill: 'bg-[#F9930E]', badge: 'bg-[#F9930E] text-white' },
   danger: { track: 'bg-danger/15', fill: 'bg-danger', badge: 'bg-danger text-white' },
 }
 
